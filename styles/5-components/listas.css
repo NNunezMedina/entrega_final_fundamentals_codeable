@@ -1,0 +1,27 @@
+.listas_funciones {
+  list-style: none;
+  padding-left: 20px;
+  padding: 0px 0px 0px 26px; 
+  display: flex;
+  flex-direction: column; 
+  gap: 8px;
+  margin-bottom: 32px;
+  margin-top: 24px;
+}
+
+.listas_funciones li {
+    
+    position: relative;
+    padding-left: 20px;
+    font-family: var(--text-base);
+    line-height: var(--leading-7);
+    font-size: 16px;
+    
+}
+
+.listas_funciones li::before {
+    content: "•";
+    color: #6d28d9;
+    position: absolute;
+    left: -20px; 
+  }

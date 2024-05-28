@@ -1,0 +1,31 @@
+.content_container {
+    display: inline-block;
+    width: 672px;
+}
+
+.content_container h1 {
+    font-family: Inter;
+    font-size: var(--font-4xl);
+    line-height: var(--leading-10);
+    font-weight: bolder;
+}
+
+.content_container h2 {
+    font-family: Inter;
+    font-size: var(--font-2xl);
+    line-height: var(--leading-8);
+    font-weight: bold;
+}
+
+.content_container p {
+    font-family: Inter;
+    font-size: var(--text-base);
+    line-height: var(--leading-7);
+}
+
+.content_container h3 {
+    font-family: Inter;
+    font-size: var(--text-xl);
+    line-height: var(--leading-8);
+    font-weight: bold;
+}

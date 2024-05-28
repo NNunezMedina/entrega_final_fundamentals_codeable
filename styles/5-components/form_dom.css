@@ -1,0 +1,115 @@
+.form {
+    width: 672px;
+    height: 1320px;
+    border-radius: var(--rounded-lg);
+    padding: 48px 16px 48px 16px;
+    gap: 16px;
+    background-color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form_content {
+    width: 330px;
+    height: 500px;
+    border-radius: var(--rounded-lg);
+    padding: 16px;
+    gap: 16px;
+    background-color: #FFFFFF;
+}
+
+.form_field {
+    width: 298px;
+    height: 90px;
+    gap: var(--spacing-2);
+    margin-bottom: 10px;
+}
+
+.form_apodo {
+    width: 298px;
+    height: 90px;
+    gap: var(--spacing-2);
+    margin-bottom: 10px;
+}
+
+.form_textarea {
+    width: 298px;
+    height: 130px;
+    gap: var(--spacing-2);
+}
+
+.form_content input {
+    width: 298px;
+    height: 40px;
+    border-radius: var(--rounded-md);
+    border: 1px solid var(--border);
+    padding: var(--spacing-2) var(--spacing-3);
+}
+
+.button.form_button {
+    width: 298px;
+}
+
+textarea {
+    width: 298px;
+    height: 80px;
+    border-radius: var(--rounded-md);
+    border: 1px;
+    padding: var(--spacing-2) var(--spacing-3);
+    gap: 4px;
+    border: 1px solid var(--border);
+}
+
+#validacionApodo {
+    color: var(--danger-border);
+    font-family: var(--text-sm);
+    line-height: var(--leading-5);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+#validacionBiografia {
+    color: var(--danger-border);
+    font-family: var(--text-sm);
+    line-height: var(--leading-5);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+#validacionContrasena {
+    color: var(--danger-border);
+    font-family: var(--text-sm);
+    line-height: var(--leading-5);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+#validacionNombre {
+    color: var(--danger-border);
+    font-family: var(--text-sm);
+    line-height: var(--leading-5);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.response-container {
+    display: flex;
+    width: 640px;
+    height: 720px;
+    border-radius: var(--rounded-lg);
+    padding: 8px;
+    background-color: var(--background);
+    color: black;
+}
+
+.respuestaServidor {
+    max-width: 624px;
+    height: 720px;
+    font-family: var(--text-base);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+}

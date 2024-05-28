@@ -1,0 +1,28 @@
+.div_form {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.label_form {
+    font-family: Inter;
+    font-weight: 500px;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--foreground);
+}
+
+.label_form span {
+    font-family: var(--monospace);
+    font-weight: 600px;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--foreground);
+}
+
+.option {
+    font-family: Inter;
+    font-weight: 500px;
+    font-size: 14px;
+    line-height: 14px;
+    color: var(--foreground);
+}
+

@@ -1,0 +1,39 @@
+.rectangulo {
+    width: 672px;  
+    height: 132px;
+    border-radius: var(--rounded-lg);
+    border: none; 
+    background-color: var(--muted); 
+    padding: 48px 0px 48px 0px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 48px;
+}
+
+.hidden {
+    display: none;
+  }
+
+  #mensaje {
+    position: absolute; 
+    top: 5%;;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 82px;
+    height: 32px;
+    border-radius: var(--rounded);
+    background-color: white;
+    color: black;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+
+

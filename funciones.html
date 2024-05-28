@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Fundamentals Evaluation - Funciones</title>
+    <link rel="stylesheet" href="/styles/index.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__container">
+        <a href="/index.html">
+          <img
+            src="assets/images/codeable-logo-sm.svg"
+            alt="codeable-logo"
+            width="135"
+            height="32"
+            class="header__logo"
+          />
+        </a>
+        <nav class="navigation">
+          <ul>
+            <li><a href="/diagramas.html">Diagramas VV</a></li>
+            <li class="active"><a href="/funciones.html">Funciones</a></li>
+            <li><a href="/dom.html">Manipulación del DOM</a></li>
+          </ul>
+        </nav>
+        <p class="header__name">Nathaly Nunez</p>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="content">
+        <div class="content_container">
+          <section class="section_header">
+            <h1>Funciones</h1>
+            <h2>Instrucciones</h2>
+            <p>Completa las funciones del archivo <span>`funciones.js`</span> siguiendo las indicaciones a fin de que los test de la página <span class="_test"><a href="test.html">test.html</a></span> pasen exitosamente. Deja una copia de tu código en esta página.</p>
+          </section>
+            
+            <section class="section_exercises">
+              <h2>Funcion 'InteractuarCadenas'</h2>
+              <h3>Descripcion</h3>
+              <p class="parrafo_funciones">Dadas dos cadenas de texto compuestas por los símbolos `+` y `-`, tu tarea es devolver una nueva cadena que muestre cómo interactúan las dos cadenas originales de la siguiente manera:</p>
+              <ul class="listas_funciones">
+                <li>Cuando un símbolo positivo (`+`) interactúa con otro positivo, permanece positivo.</li>
+                <li>Cuando un símbolo negativo (`-`) interactúa con otro negativo, permanece negativo.</li>
+                <li>Pero cuando un símbolo negativo interactúa con un símbolo positivo, se neutralizan y se muestran como el número `0`.</li>
+              </ul>
+              <h3>Requerimiento</h3>
+              <p>Escribe una función `interactuarCadenas` que toma dos cadenas de igual longitud como argumentos y devuelve una nueva cadena de acuerdo con las reglas de interacción mencionadas.</p>
+
+              <h3>Ejemplo</h3>
+              <div class="section_code">
+                <p class="p_codigo_4">
+                  const resultado = interactuarCadenas("+-+", "+--");
+                  <br>
+                  console.log(resultado); // Devuelve "+-0"
+                </p>
+              </div>
+
+              <h3>Respuesta</h3>
+              <div class="section_code">
+                <p class="p_codigo_5">
+                  function interactuarCadenas(cadena1, cadena2) {
+                    <br>
+                    &nbsp;&nbsp;if (cadena1.length !== cadena2.length) {
+                      <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;console.error("Las cadenas deben tener la misma longitud");
+                      <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;return;
+                      <br>
+                      &nbsp;&nbsp;} 
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;let resultado = "";
+                      <br>
+                      <br>
+                      &nbsp;&nbsp;for (let i = 0; i < cadena1.length; i++) {
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;const cadena1Posiciones = cadena1[i];
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;const cadena2Posiciones = cadena2[i];
+                        <br>
+                        <br>
+                        &nbsp;&nbsp;if (cadena1Posiciones === '+' && cadena2Posiciones === '+') {
+                          <br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;resultado += '+';
+                          <br>
+                          &nbsp;&nbsp;} else if (cadena1Posiciones === '-' && cadena2Posiciones === '-') {
+                            <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;resultado += '-';
+                            <br>
+                            &nbsp;&nbsp;} else if ((cadena1Posiciones === '+' && cadena2Posiciones === '-') || &nbsp;&nbsp;(cadena1Posiciones === '-' && cadena2Posiciones === '+')) {
+                              <br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;resultado += '0';
+                              <br>
+                              &nbsp;&nbsp;} else {
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;console.error("Las cadenas solo deben contener los símbolos '+' y '-'");
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;return;
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}
+                        <br>
+                        &nbsp;&nbsp;}
+                    <br>
+                    &nbsp;&nbsp;return resultado;
+                    <br>
+                  }
+                </p>
+              </div>
+
+              <h2>Función `generarApodo`</h2>
+              <h3>Descripcion</h3>
+              <p>Tu objetivo es escribir una función llamada `generarApodo` que tome un string `nombre` como argumento y devuelva los primeros 3 o 4 caracteres como un apodo.</p>
+              <h3>Requerimiento</h3>
+              <p>Si la tercera letra es una consonante, devuelve las primeras 3 letras.</p>
+              
+              <div class="section_code">
+                <p class="p_codigo">
+                  generarApodo("Roberto") // "Rob"
+                  generarApodo("Kimberly") // "Kim"
+                  generarApodo("Samuel") // "Sam"
+                </p>
+              </div>
+              
+              <p>Si la tercera letra es una vocal, devuelve las primeras 4 letras.</p>
+              
+              <div class="section_code">
+              <p class="p_codigo">
+                generarApodo("Jeannie") // "Jean"
+                generarApodo("Douglas") // "Doug"
+                generarApodo("Gregory") // "Greg"
+              </p>
+            </div>
+            <p>Si el string tiene menos de 4 caracteres, lanza un Error con el mensaje "Nombre muy corto".</p>
+            <br>
+            <p>Ten cuenta que:</p>
+            <br>
+            <ul class="listas_funciones">
+              <li>Las vocales son solo "aeiou", así que no cuentes la letra "y".</li>
+              <li>La argumento de entrada siempre será un string.</li>
+            </ul>
+            <h3>Respuesta</h3>
+            <div class="section_code">
+              <p class="p_codigo_5">
+                function generarApodo(nombre) {
+                  <br>
+                  &nbsp;&nbsp;if(nombre.length <=3) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;throw new Error("Nombre muy corto")
+                    <br>
+                    &nbsp;&nbsp;} 
+                  <br>
+                  <br>
+                  &nbsp;&nbsp;const terceraLetra = nombre[2];
+                  <br>
+                  &nbsp;&nbsp;if("aeiou".includes(terceraLetra)) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;let apodoVocales = nombre.slice(0,4);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return apodoVocales;
+                    <br>
+                    &nbsp;&nbsp;} 
+                  <br>
+                  &nbsp;&nbsp;else if("bcdfghjklmnpqrstvwxyz".includes(terceraLetra)) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;let apodoConsonantes = nombre.slice(0,3);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return apodoConsonantes;
+                    <br>
+                    &nbsp;&nbsp;}
+              </p>
+            </div>
+            
+            <h2>Función `obtenerMarcador`</h2>
+            <h3>Descripcion</h3>
+            <p>Trabajas en un estadio de fútbol de ligas menores y has decido implementar un sistema para automatizar el marcador del juego. Tienes un módulo de reconocimiento de voz que convierte lo que el árbitro dice en una cadena de texto. Tu reto actual es convertir ese texto en un par de números que representen el marcador actual.</p>
+
+            <h3>Requerimiento</h3>
+            <p>Escribe una función `obtenerMarcador` que recibe un texto y retorna un arreglo con dos números que representa el marcador del juego.</p>
+            <ul class="listas_funciones">
+              <li>La puntuación de ambos equipos tendrá un rango de 0-9.</li>
+              <li>El árbitro puede decir la puntuación de diversas maneras, por ejemplo:</li>
+            </ul>
+            <div class="section_code">
+              <p class="p_codigo_5">
+                obtenerMarcador("El marcador es cuatro cero") // [4, 0]
+                <br>
+                obtenerMarcador("nuevo marcador: dos tres") // [2, 3]
+                <br>
+                obtenerMarcador("dos dos") // [2, 2]
+                <br>
+                obtenerMarcador("Arsenal acaba de recibir otro gol, dos cero") // [2, 0]
+              </p>
+            </div>
+            <p>El valor de retorno de la función siempre debe ser un array de dos números. Si no hay números en el texto de entrada se asume que el marcador es 0 a 0.</p>
+            <h3>Respuesta</h3>
+            <div class="section_code">
+              <p class="p_codigo_4">
+                function obtenerMarcador(texto) {
+                  <br>
+                  <br>
+                  const numeros = {
+                    <br>
+                    cero: 0,
+                    <br>
+                    uno: 1,
+                    <br>
+                    dos: 2,
+                    <br>
+                    tres: 3,
+                    <br>
+                    cuatro: 4,
+                    <br>
+                    cinco: 5,
+                    <br>
+                    seis: 6,
+                    <br>
+                    siete: 7,
+                    <br>
+                    ocho: 8,
+                    <br>
+                    nueve: 9
+                    <br>
+                    &nbsp;&nbsp;};
+                  <br>
+                  <br>
+                
+                  const resultado = texto.split(" ")
+                  <br>
+                  &nbsp;&nbsp;.map(palabra => numeros[palabra])
+                   <br>
+                   &nbsp;&nbsp;.filter(numero => numero !== undefined);
+                   <br>
+                   <br>
+                
+                   &nbsp;&nbsp;return resultado.length ? resultado : [0, 0];
+                  <br>
+                }
+              </p>
+            </div>
+
+            <h2>Clase `Barco`</h2>
+            <h3>Descripcion</h3>
+            <p>Eres el astuto líder de una ágil tripulación pirata, siempre en busca de valiosos tesoros. Como todo pirata versado en tecnología, planeas utilizar la Programación Orientada a Objetos (OOP) para crear un sistema que ayude a identificar barcos cargados con tesoro.
+              <br>
+              <br>
+              En estos tiempos modernos, la gente pesa bastante y esto suma al peso del barco. ¿Cómo puedes asegurarte de que el barco que eliges esté lleno de oro y no solo cargado con una tripulación pesada?
+            </p>
+            <h3>Requerimiento</h3>
+            <p>Tu tarea es crear una clase llamada `Barco`. Esta clase debe tener un constructor con dos parámetros:</p>
+            <ul class="listas_funciones">
+              <li><strong>calado:</strong> Una estimación del peso total del barco basado en cuán bajo se encuentra en el agua.</li>
+              <li><strong>tripulación:</strong>El número de miembros de la tripulación a bordo del barco.</li>
+            </ul>
+            <p>Adicionalmente, la clase debe tener un método llamado `valeLaPena`. Este método debe retornar `true` o `false` según si el barco vale la pena ser saqueado o no.</p>
+            <ul class="listas_funciones">
+              <li>Cada miembro de la tripulación suma 1.5 unidades al calado del barco.</li>
+              <li>Si el calado sigue siendo más de 20 unidades después de contabilizar el peso de la tripulación, ¡entonces el barco vale la pena ser saqueado!</li>
+            </ul>
+            <div class="section_code">
+              <p class="p_codigo_5">
+                const perlaNegra = new Barco(32, 5);
+                <br>
+                perlaNegra.valeLaPena();  // Debería retornar true
+                <br>
+                const titanic = new Barco(15, 10);
+                <br>
+                titanic.valeLaPena();  // Debería retornar false
+              </p>
+            </div>
+            <h3>Repuesta</h3>
+            <div class="section_code">
+              <p class="p_codigo_5">
+                class Barco  {
+                  <br>
+                  &nbsp;&nbsp;constructor (calado, tripulacion) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.calado = calado;
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.tripulacion = tripulacion;
+                    <br>
+                    &nbsp;&nbsp;}
+                  <br>
+                  <br>
+                  valeLaPena() {
+                    <br>
+                    &nbsp;&nbsp;let pesoTripulacion = this.tripulacion * 1.5;
+                    <br>
+                    &nbsp;&nbsp;let resultado = this.calado - pesoTripulacion
+                    <br>
+                    &nbsp;&nbsp;if( resultado > 20) {
+                      <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;return true;
+                      <br>
+                      &nbsp;&nbsp;} else {
+                      <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;return false;
+                      <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    &nbsp;&nbsp;}
+                  <br>
+                }
+              </p>
+            </div>
+            
+          </section>
+          </div>
+      </div>
+    </main>
+
+    <script src="/funciones.js"></script>
+  </body>
+</html>
